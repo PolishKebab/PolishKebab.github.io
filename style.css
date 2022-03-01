@@ -1,0 +1,149 @@
+/** Global Wrapper **/
+body {
+  font-family: "Roboto", sans-serif;
+  box-sizing: border-box;
+  background: #060606;
+}
+.wrapper {
+  width: 1300px;
+  margin-left: auto;
+  margin-right: auto;
+  box-sizing: border-box;
+  color: white;
+}
+@media only screen and (max-width: 1300px) {
+  .wrapper {
+    width: 1000px;
+  }
+}
+@media only screen and (max-width: 1000px) {
+  .wrapper {
+    width: 650px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+@media only screen and (max-width: 650px) {
+  .wrapper {
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+}
+
+/** Navigation **/
+nav.desktopNavigation {
+  width: 100%;
+  background: #1d1d1d;
+  padding-top: 20px;
+  padding-bottom: 20px;
+  position: relative;
+}
+.desktopNavigation .wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+.logo {
+  color: white;
+  font-weight: bold;
+  font-size: 3.2rem;
+}
+
+.mainNavigation ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+.mainNavigation ul li {
+  margin-left: 30px;
+}
+
+.mainNavigation ul li:first-of-type {
+  margin-left: 0;
+}
+
+.mainNavigation ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: all ease-in-out 0.3s;
+}
+.mainNavigation ul li a:visited {
+  color: white;
+}
+
+.mainNavigation ul li a:focus {
+  color: white;
+}
+.mainNavigation ul li a:hover {
+  color: #079ab8;
+}
+
+/** Main Content **/
+
+main.mainBody {
+  width: 100%;
+}
+.heroSection {
+  padding-top: 100px;
+  padding-bottom: 100px;
+}
+.heroSection h2 {
+  color: white;
+  font-size: 1.6rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+.heroSection h1 {
+  font-weight: 900;
+  color: white;
+  font-size: 4.4rem;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+@media screen and (max-width: 650px) {
+  .heroSection h1 {
+    font-size: 2.2rem;
+  }
+}
+.heroSection h3 {
+  color: white;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.heroImage {
+  width: 100%;
+  height: 450px;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background: url("./images/background.jpg");
+  -webkit-border-radius: 15px;
+  -moz-border-radius: 15px;
+  border-radius: 15px;
+  margin-top: 40px;
+  position: relative;
+}
+.heroImage:after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  background: black;
+  opacity: 0.68;
+  transition: all ease-in-out 0.3s;
+}
+.heroImage:hover:after {
+  opacity: 0.2;
+}
