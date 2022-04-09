@@ -85,7 +85,9 @@ nav.desktopNavigation {
 }
 
 /** Main Content **/
-
+::-webkit-scrollbar{
+  display: none;
+}
 main.mainBody {
   width: 100%;
 }
