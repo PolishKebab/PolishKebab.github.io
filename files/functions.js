@@ -65,12 +65,15 @@ Code to execute below
 const clicker = new CookieClicker()
 const multicost=document.getElementById("multiCost")
 const passcost = document.getElementById("passCost")
-multicost.innerText=Math.floor((clicker.items.clickMultiplier+1)*2)
-passcost.innerText=Math.floor((clicker.items.passiveIncome+1)*2)
+multicost.innerText=Math.floor((clicker.items.clickMultiplier+1)*20)
+passcost.innerText=Math.floor((clicker.items.passiveIncome+1)*50)
 window.onclose=()=>clicker.save({items:clicker.items,cookies:clicker.cookies})
 setInterval(()=>{
     clicker.save({items:clicker.items,cookies:clicker.cookies})
     clicker.addPoints(clicker.items.passiveIncome)
+    const title = document.getElementById("title")
+    const countr = title.innerText.split("|")
+    title.innerText=countr[0]+"|"+clicker.cookies
 },1000)
 const img = document.getElementById("image")
 img.src="./images/discord.png"
@@ -81,23 +84,23 @@ const err=new Err()
 const multiBuy = document.getElementById("multiBuy")
 multiBuy.addEventListener("click",()=>{
     try{
-        clicker.buy("clickMultiplier",Math.floor(clicker.items.clickMultiplier*2))
+        clicker.buy("clickMultiplier",Math.floor(clicker.items.clickMultiplier*20))
     }catch(e){
         console.log(e)
         err.createError(e)
     }
-    multicost.innerText=Math.floor((clicker.items.clickMultiplier+1)*2)
+    multicost.innerText=Math.floor((clicker.items.clickMultiplier+1)*20)
 })
 const passBuy = document.getElementById("passBuy")
 const reset = document.getElementById("reset")
 passBuy.addEventListener("click",()=>{
     try{
-        clicker.buy("passiveIncome",Math.floor(clicker.items.passiveIncome*2))
+        clicker.buy("passiveIncome",Math.floor(clicker.items.passiveIncome*50))
     }catch(e){
         console.log(e)
         err.createError(e)
     }
-    passcost.innerText=Math.floor((clicker.items.passiveIncome+1)*2)
+    passcost.innerText=Math.floor((clicker.items.passiveIncome+1)*50)
 })
 reset.addEventListener("click",()=>{
     console.log("reset")
