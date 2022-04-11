@@ -11,7 +11,7 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
     <!-- Calls Google Fonts in-->
-    <script type="text/Javascript" src="./files/functions.js"></script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet"> 
@@ -33,11 +33,27 @@
     </nav>
     <!-- Main Content-->
     <main class="mainBody">
-        <section class="heroSection">
-            <img src="./images/poe.gif" style="border-radius: 35px; height: 75px; width: 75px; margin: 15px;">
-            <h1>Not done yet</h1>
-            <img src="./images/poe.gif" style="border-radius: 35px; height: 75px; width: 75px; margin: 15px;">
+        <section class="heroSection" id="main">
+            <img id="image"></img>
+            <table style="border-style: solid; border-color: #1d1d1d; border-width: 5px; background-color: gray; align-items:center; float: right;">
+                <tr style="background-color: #1d1d1d; height: 50px;" ><th colspan="2" style="margin: 0px;">Counters</th></tr>
+                <tr><th>cookies</th> <th><span id="counter">0</span></th></tr>
+                <tr><th>multiplier</th><th><span id="multiLvl">0</span></th></tr>
+                <tr><th>passive income</th><th><span id="passLvl">0</span></th></tr>
+            </table>
+            <table style="border-style: solid; border-color: #1d1d1d; border-width: 5px; background-color: gray; float: right;">
+                <tr style="background-color: #1d1d1d; height: 50px;" ><th colspan="2">Shop</th></tr>
+                <tr><th><button id="multiBuy" style="padding: 8px; width: 125px;">Upgrade multiplier</button></th><th id="multiCost"></th></tr>
+                <tr><th><button id="passBuy" style="padding: 8px; width: 125px;">Upgrade passive</button></th><th id="passCost"></th></tr>
+            </table>
+            <table style="border-style: solid; border-color: #1d1d1d; border-width: 5px; background-color: gray; float: right;">
+                <tr style="background-color: #1d1d1d; height: 50px;"><th colspan="2">Settings</th></tr>
+                <tr><th><button id="reset" style="padding: 3px; width: 125px;">Reset</button></th></tr>
+                <tr><th><button style="padding: 3px; width: 125px;">Save</button></th></tr>
+                <tr><th><button style="padding: 3px; width: 125px;">Load</button></th></tr>
+            </table>
         </section>
     </main>
 </body>
+<script type="text/javascript" src="./files/functions.js"></script>
 </html>

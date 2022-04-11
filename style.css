@@ -76,7 +76,18 @@ nav.desktopNavigation {
 .mainNavigation ul li a:visited {
   color: white;
 }
-
+span{
+  color: white;
+}
+table button{
+  border: none;
+  background-color: #1d1d1d;
+  color:white;
+}
+th{
+  padding: 10px;
+  color: white;
+}
 .mainNavigation ul li a:focus {
   color: white;
 }
@@ -96,6 +107,9 @@ main.mainBody {
   padding-bottom: 100px;
   display: flex;
   justify-content: center;
+}
+p{
+  color:white;
 }
 #contact{
   border-radius: 5px;
