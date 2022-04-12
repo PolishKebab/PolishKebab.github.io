@@ -1,6 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script>
+        window.onload=()=>{
+            const year = new Date(Date.now()).getFullYear()
+            const age = year-2004
+            document.getElementById("age").innerText=age+" "
+        }
+    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,6 +39,11 @@
     <!-- Main Content-->
     <main class="mainBody">
         <section class="heroSection">
+            <div id="introduction" style="color: white; text-align: center; font-size: 20px">
+                I'm Filip Mikłasewicz, a <span id="age"></span>years old programmer from Poland.<br>
+                I mostly use Javascript, but know other languages also.<br>
+                <img src="./images/profile.jpg" style="background-color: black; opacity: 68; width: 40%; margin: 20px; border-radius: 35%;">
+            </div>
         </section>
     </main>
 </body>
