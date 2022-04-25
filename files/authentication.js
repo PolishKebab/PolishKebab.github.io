@@ -10,7 +10,7 @@ window.onload=()=>{
         console.log(usr)
         if(usr){
             localStorage.setItem("accessLvl",usr)
-            res.innerText=`Welcome ${username}, this is the admin portal`
+            res.innerText=`Welcome ${username.value}, this is the admin portal`
         }else{
             res.innerText="Access Denied"
         }
