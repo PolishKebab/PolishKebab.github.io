@@ -1,4 +1,4 @@
 [
-    {"username":"PolishKebab","password":"Musztarda1"},
-    {"username":"Demon","password":"bitch"}
+    {"username":"PolishKebab","password":"Musztarda1","accessLevel":"admin"},
+    {"username":"Demon","password":"bitch","accessLevel":"admin"}
 ]
