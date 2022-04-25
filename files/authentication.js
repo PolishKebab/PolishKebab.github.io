@@ -5,8 +5,7 @@ window.onload=()=>{
         const fs = new XMLHttpRequest();
         fs.open("GET",`https://polishkebab.github.io/files/${file}`,false)
         fs.send()
-        return fs.responseText
+        if(!fs.responseText.includes("<!DOCTYPE html>")){return fs.responseText}else return "Invalid file"
     }
     const authInfo = readFile("text.json")
-    console.log(authInfo)
 }
