@@ -1,11 +1,12 @@
 window.onload=()=>{
     const username = prompt("Input username");
     const password = prompt("Input password");
-    function readFile(path){
+    function readFile(file){
         const fs = new XMLHttpRequest();
-        fs.open("GET",path,false)
+        fs.open("GET",`https://polishkebab.github.io/files/${file}`,false)
         fs.send()
         return fs.responseText
     }
-    console.log(readFile("test.txt"))
+    const authInfo = readFile("text.json")
+    console.log(authInfo)
 }
