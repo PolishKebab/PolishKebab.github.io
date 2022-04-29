@@ -7,7 +7,7 @@ window.onload=async()=>{
         const password = document.getElementById("password")
         const usr=await login(username.value,password.value)
         if(!usr){
-            res.innerText="Access Denied"
+           return alert("Access Denied")
         }
         username.remove()
         password.remove()
@@ -18,8 +18,12 @@ window.onload=async()=>{
         const usr=authInfo.filter(r=>(r.username==name&&r.password==password))[0]
         if(usr){
             const userFiles = await loadFiles(name)
+            const fileList = document.createElement("ul")
+            for(let file of userFiles){
+                fileList.append(document.createElement("li").innerText=file)
+            }
             const container = document.getElementById("files")
-            container.append(document.createElement("span").innerText=userFiles)
+            container.append(fileList)
             return usr.accessLevel
         }
         return null
@@ -40,6 +44,6 @@ window.onload=async()=>{
         if(files.lenght==0){
             return "No files uploaded"
         }
-        return files.filter(r=>r.path.startsWith(`files/${user}`)).map(r=>r.path.replace(`files/${user}`,""))
+        return files.filter(r=>r.path.startsWith(`files/${user}`)).map(r=>r.path.replace(`files/${user}/`,""))
     }
 }
