@@ -20,7 +20,9 @@ window.onload=async()=>{
             const userFiles = await loadFiles(name)
             const fileList = document.createElement("ul")
             for(let file of userFiles){
-                fileList.append(document.createElement("li").innerText=file)
+                const x = document.createElement("li").innerHTML=`<a href=${file}>${file}</a>`
+                fileList.append(x)
+                fileList.append(document.createElement("br"))
             }
             const container = document.getElementById("files")
             container.append(fileList)

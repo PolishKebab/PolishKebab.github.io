@@ -1,13 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <script>
-        window.onload=()=>{
-            document.getElementById("download").addEventListener("click",()=>{
-                alert("Not uploaded yet")
-            })
-        }
-    </script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -37,10 +30,27 @@
         </div>
     </nav>
     <!-- Main Content-->
-    <main class="mainBody">
-        <section class="heroSection">
-            <button id="download" style="background-color: #1d1d1d;border:none;border-radius: 5px; color: white; padding: 10px;">Download CV</button>
-        </section>
-    </main>
+    <div class="container">
+        <h2>Bots</h2>
+        <div class="select-box">
+          <div class="options-container">
+            <div class="option">
+              <input type="radio" class="radio" id="bot_1" name="category"/>
+              <label for="bot_1">Embed message bot</label>
+            </div>
+            <div class="option">
+              <input type="radio" class="radio" id="bot_2" name="category"/>
+              <label for="bot_2">Moderation bot</label>
+            </div>
+          </div>
+          <div class="selected">
+            Select discord bot
+          </div>
+        </div>
+        <div class="selected-description">
+            
+        </div>
+      </div>
+      <script src="./files/portfolio.js"></script>
 </body>
 </html>
