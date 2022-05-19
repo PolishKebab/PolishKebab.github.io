@@ -260,11 +260,15 @@ p{
 .select-box .option .radio {
   display: none;
 }
-.selected-description{
+.descriptions{
+  display: none;
   color: white ;
   padding: 12px 24px;
   margin: 6px 0px;
   background-color: #2f3640;
   width: 800px;
   border-radius: 8px;
+}
+.description img{
+  max-width: 100%;
 }
