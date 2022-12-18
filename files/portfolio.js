@@ -44,6 +44,7 @@ http.onloadend=(e)=>{
                 gitLink.target="_blank"
                 const descText = document.createElement("div")
                 descText.append(gitLink)
+                descText.appent(repoName)
                 const http2 = new XMLHttpRequest()
                 http2.open("GET",`https://api.github.com/repos/polishkebab/${repo.name}/contents/README.md`)
                 http2.onloadend=(e)=>{
@@ -60,7 +61,6 @@ http.onloadend=(e)=>{
                 http2.send()
                 desc.classList.add("description")
                 desc.id=`bot_${index+1}`
-                desc.appent(repoName)
                 desc.append(descText)
                 document.getElementsByClassName("descriptions")[0].append(desc)
                 // desc end
