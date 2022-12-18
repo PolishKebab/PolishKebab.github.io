@@ -60,6 +60,7 @@ http.onloadend=(e)=>{
                 http2.send()
                 desc.classList.add("description")
                 desc.id=`bot_${index+1}`
+                desc.appent(repoName)
                 desc.append(descText)
                 document.getElementsByClassName("descriptions")[0].append(desc)
                 // desc end
