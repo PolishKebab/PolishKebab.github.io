@@ -9,7 +9,7 @@
   selected.addEventListener("click", (e) => {
     optionsContainer.classList.toggle("active");
   });
-  
+  // wierd bug ??
   optionsList.forEach(o => {
     o.addEventListener("click", () => {
       descriptions.style.display="block"
