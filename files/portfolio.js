@@ -44,7 +44,7 @@ http.onloadend=(e)=>{
                 gitLink.target="_blank"
                 const descText = document.createElement("div")
                 descText.append(gitLink)
-                desc.append(repoName)
+                desc.append(repoName)//wtf? append!!!
                 const http2 = new XMLHttpRequest()
                 http2.open("GET",`https://api.github.com/repos/polishkebab/${repo.name}/contents/README.md`)
                 http2.onloadend=(e)=>{
