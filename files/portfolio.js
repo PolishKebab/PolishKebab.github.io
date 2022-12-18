@@ -44,14 +44,13 @@ http.onloadend=(e)=>{
                 gitLink.target="_blank"
                 const descText = document.createElement("div")
                 descText.append(gitLink)
-                descText.appent(repoName)
+                desc.append(repoName)
                 const http2 = new XMLHttpRequest()
                 http2.open("GET",`https://api.github.com/repos/polishkebab/${repo.name}/contents/README.md`)
                 http2.onloadend=(e)=>{
                 const out = JSON.parse(http2.responseText)
                 const descTxt = document.createElement("div")
                 if(!out.message){
-                  console.log(out)
                   descTxt.innerText = (atob(out.content))
                 }else{
                   descTxt.innerText=""
