@@ -1,35 +1,3 @@
-  window.onload=()=>{
-  const selected = document.querySelector(".selected");
-  const optionsContainer = document.querySelector(".options-container");
-  const optionsList = document.querySelectorAll(".option");
-  const descriptions = document.querySelector(".descriptions")
-  descriptions.style.display="none"
-  const optionContent = document.querySelectorAll(".radio")
-  descriptions.style.display="none;"
-  selected.addEventListener("click", (e) => {
-    optionsContainer.classList.toggle("active");
-  });
-  // wierd bug ??
-  optionsList.forEach(o => {
-    o.addEventListener("click", () => {
-      descriptions.style.display="block"
-      selected.innerHTML = o.querySelector("label").innerHTML;
-      optionsContainer.classList.remove("active");
-      const x = document.querySelectorAll(".description")
-      let selectedOption;
-      for(let x of optionContent){
-        if(o.contains(x))selectedOption=x
-      }
-      console.log(`clicked ${selectedOption}`)
-      if(!selectedOption)return;
-      const description = document.querySelectorAll(`#${selectedOption.id}`)[1]
-      x.forEach(element=>{
-        element.style.display="none"
-      })
-      description.style.display="block"
-    });
-  });
-}
 const http = new XMLHttpRequest()
 http.open("GET","https://api.github.com/users/polishkebab/repos")
 http.onloadend=(e)=>{
@@ -87,3 +55,35 @@ http.onloadend=(e)=>{
 
 }
 http.send()
+  window.onload=()=>{
+  const selected = document.querySelector(".selected");
+  const optionsContainer = document.querySelector(".options-container");
+  const optionsList = document.querySelectorAll(".option");
+  const descriptions = document.querySelector(".descriptions")
+  descriptions.style.display="none"
+  const optionContent = document.querySelectorAll(".radio")
+  descriptions.style.display="none;"
+  selected.addEventListener("click", (e) => {
+    optionsContainer.classList.toggle("active");
+  });
+  // wierd bug ??
+  optionsList.forEach(o => {
+    o.addEventListener("click", () => {
+      descriptions.style.display="block"
+      selected.innerHTML = o.querySelector("label").innerHTML;
+      optionsContainer.classList.remove("active");
+      const x = document.querySelectorAll(".description")
+      let selectedOption;
+      for(let x of optionContent){
+        if(o.contains(x))selectedOption=x
+      }
+      console.log(`clicked ${selectedOption}`)
+      if(!selectedOption)return;
+      const description = document.querySelectorAll(`#${selectedOption.id}`)[1]
+      x.forEach(element=>{
+        element.style.display="none"
+      })
+      description.style.display="block"
+    });
+  });
+}
