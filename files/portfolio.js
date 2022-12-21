@@ -20,6 +20,7 @@
       for(let x of optionContent){
         if(o.contains(x))selectedOption=x
       }
+      console.log(`clicked ${selectedOption}`)
       if(!selectedOption)return;
       const description = document.querySelectorAll(`#${selectedOption.id}`)[1]
       x.forEach(element=>{
