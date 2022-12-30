@@ -33,5 +33,7 @@ document.addEventListener("DOMContentLoaded", () => {
       });
   });
 
-  document.body.append(select);
+  const selectBox = document.querySelector(".select-box");
+  selectBox.insertBefore(select, selectBox.firstChild);
+  select.style.position = "fixed";
 });
