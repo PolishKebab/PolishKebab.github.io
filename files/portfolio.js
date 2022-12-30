@@ -36,4 +36,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const selectBox = document.querySelector(".select-box");
   selectBox.insertBefore(select, selectBox.firstChild);
   select.style.position = "fixed";
+
+  // Ustaw kolor tekstu w elemencie div o klasie "select-box" na biały
+  selectBox.style.color = "white";
 });
