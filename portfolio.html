@@ -1,44 +1,49 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const select = document.createElement("select");
-    select.classList.add("select");
-    const selectOption = document.createElement("option");
-    selectOption.innerText = "Wybierz repozytorium";
-    selectOption.disabled = true;
-    selectOption.selected = true;
-    select.append(selectOption);
-    fetch("https://api.github.com/users/polishkebab/repos")
-      .then((response) => response.json())
-      .then((repos) => {
-        repos.forEach((repo) => {
-          const option = document.createElement("option");
-          option.innerText = repo.name;
-          option.value = repo.name;
-          select.append(option);
-        });
-      });
-      select.addEventListener("change", event => {
-        const repoName = event.target.value;
-        fetch(`https://api.github.com/repos/polishkebab/${repoName}/contents/README.md`)
-          .then(response => {
-            if (response.ok) {
-              return response.json();
-            }
-          })
-          .then(data => {
-            const readme = document.querySelector(".selected");
-            if (data.message) {
-              readme.innerHTML = "";
-            } else {
-              readme.innerHTML = marked.parse(atob(data.content));
-              readme.style.display="block";
-            }
-          })
-          .catch(error => {
-            document.querySelector(".selected").innerHTML="";
-            document.querySelector(".selected").style.display="none";
-          });
-      });
-    const selectBox = document.querySelector(".select-box");
-    selectBox.style.color = "white";
-    selectBox.append(select)
-  });
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        .selected{
+            display: none;
+        }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PolishKebab's website</title>
+    <!-- Reset Stylesheet -->
+    <link rel="stylesheet" href="reset.css">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Calls Google Fonts in-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,400;0,700;0,900;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation Start -->
+    <nav class="desktopNavigation">
+        <div class="wrapper">
+            <div class="logo">PK</div>
+            <div class="mainNavigation">
+                <ul>
+                    <li><a href="/">Home</a></li>
+                    <li><a href="/about">About</a></li>
+                    <li><a href="/portfolio">Portfolio</a></li>
+                    <li><a href="/contact">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- Main Content-->
+    <div class="container">
+        <h1 style="color:white; margin: 6px;">Github projects</h1>
+        <div class="select-box">
+        </div>
+        <div class="selected" empty>
+        </div>
+    </div>
+</body>
+<script src="https://unpkg.com/marked/marked.min.js"></script>
+<script src="./main.js"></script>
+</html>
