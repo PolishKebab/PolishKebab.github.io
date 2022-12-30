@@ -14,7 +14,7 @@ document.addEventListener("DOMContentLoaded", () => {
       repos.forEach((repo) => {
         const option = document.createElement("option");
         option.innerText = repo.name;
-        option.value = repo.html_url;
+        option.value = repo.name;
         select.append(option);
       });
     });
@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
   // Dodaj obsługę zdarzenia zmiany wyboru w menu wyboru
   select.addEventListener("change", (event) => {
     // Pobierz wartość wybranej opcji
-    const repoUrl = event.target.value;
+    const repoName = event.target.value;
     // Pobierz plik README z wybranego repozytorium
-    fetch(`${repoUrl}/contents/README.md`)
+    fetch(`https://api.github.com/repos/polishkebab/${repoName}/contents/README.md`)
       .then((response) => response.json())
       .then((data) => {
-        // Wyświetl zawartość pliku README w elemencie div o klasie "readme"
-        const readme = document.querySelector(".readme");
+        // Wyświetl zawartość pliku README w elemencie div o klasie "select-box"
+        const readme = document.querySelector(".select-box");
         readme.innerHTML = atob(data.content);
       });
   });
